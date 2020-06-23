@@ -31,7 +31,7 @@ def crossjoin(df1, df2):       #Pyspark computation that integrates the data fro
     df = df.select(df['latitude'], df['longitude'], df['zip'])
     return df
 
-def write_to_tables(df):        #Write cross-joined dataframe tio new table
+def write_to_tables(df):        #Write cross-joined dataframe to new table
     url = XXX
     properties = YYY 
     df.write.jdbc(url = url, table = 'db_name_3', mode = 'append', properties=properties)
