@@ -1,6 +1,14 @@
-DeltAQ : A scalable data warehouse for spatio-temporal analysis of air quality data
+# DeltAQ : A scalable data warehouse for spatio-temporal analysis of air quality data
 
-### Data sources:
+##### Table of Contents  
+1. [Background]()
+2. [Data Sources](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#data-sources)
+3. [Tech Stack](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#tech-stack)
+4. [Usage Instructions](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#usage-instructions)
+
+### Background
+
+### Data sources
 
 Representative data files used for this project have been uploaded to the "Data" sub-repo. 
 
@@ -9,8 +17,8 @@ OpenAQ data: https://openaq-fetches.s3.amazonaws.com/index.html
 Zip-code data: https://simplemaps.com/data/us-zips
 
 
-### Tech Stack:
+### Tech Stack
 ![image](Pipeline.png)
 
 
-### Usage instructions:
+### Usage instructions
