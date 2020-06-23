@@ -37,7 +37,7 @@ def schema_transformation(df):      #Transform raw data from a nested structure 
     df = df.withColumn("day", (dayofyear(col('time').cast(DateType())).cast(IntegerType())))
     return df
     
-def write_to_tables(df):            #Write cross-joined dataframe tio new table
+def write_to_tables(df):            #Write schema-transformed dataframe to Timescale table
     df = df.filter(df['country'] == "US")
     urlzip = XXXX
     properties = YYYY
