@@ -18,9 +18,9 @@ From the point of view of data, what makes this a challenging problem is that th
 
 Representative data files used for this project have been uploaded to the "Data" sub-repo. 
 
-For full data:
-OpenAQ data: https://openaq-fetches.s3.amazonaws.com/index.html
-Zip-code data: https://simplemaps.com/data/us-zips
+For complete data:
+* OpenAQ data: https://openaq-fetches.s3.amazonaws.com/index.html
+* Zip-code data: https://simplemaps.com/data/us-zips
 
 
 ### Tech Stack
