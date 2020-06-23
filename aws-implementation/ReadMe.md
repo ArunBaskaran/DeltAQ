@@ -23,5 +23,6 @@ Zip-code data: https://simplemaps.com/data/us-zips
 
 ### Front-end demo
 
+<img src="Demo_video_1.gif" alt="drawing" width="900" height="600"/>
 
 ### Usage instructions
