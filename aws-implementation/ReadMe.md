@@ -30,4 +30,14 @@ For complete data:
 
 <img src="Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
-### Usage instructions
+### Usage instructions  (Detailed instructions to follow)
+
+#### Required installations
+
+* Spark v2.4.5: AWS EC2 four m5 nodes (1 master and 3 workers) 
+* AWS SQS
+* Postgres 10.0
+* TimescaleDB 10.0
+* Grafana 
+
+
