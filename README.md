@@ -1,7 +1,7 @@
 # DeltAQ : A scalable data warehouse for spatio-temporal analysis of air quality data
 
 ### Table of Contents  
-1. [Introduction](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#introduction)
+1. [Introduction](#introduction)
 2. [Directory Structure](https://github.com/ArunBaskaran/DeltAQ/blob/develop/README.md#directory-structure)
 3. [Data Sources](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#data-sources)
 4. [Tech Stack](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#tech-stack)
