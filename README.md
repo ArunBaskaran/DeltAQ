@@ -30,6 +30,10 @@ For complete data:
 
 <img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
+### Directory Structure 
+
+To-Do
+
 ### Usage instructions  (Detailed instructions to follow)
 
 #### Required installations
@@ -41,4 +45,5 @@ For complete data:
 * Grafana 
 
 
+#### Config options (To-do)
 
