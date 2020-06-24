@@ -24,11 +24,11 @@ For complete data:
 
 
 ### Tech Stack
-![image](Pipeline.png)
+![image](src/Pipeline.png)
 
 ### Grafana demo
 
-<img src="Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
+<img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
 ### Usage instructions  (Detailed instructions to follow)
 
