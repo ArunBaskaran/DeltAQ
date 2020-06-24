@@ -4,7 +4,7 @@
 1. [Introduction](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#introduction)
 2. [Data Sources](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#data-sources)
 3. [Tech Stack](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#tech-stack)
-4. [Front-end demo](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#front-end-demo)
+4. [Grafana demo](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#grafana-demo)
 4. [Usage Instructions](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#usage-instructions)
 
 ### Introduction
@@ -26,7 +26,7 @@ For complete data:
 ### Tech Stack
 ![image](Pipeline.png)
 
-### Front-end demo
+### Grafana demo
 
 <img src="Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
