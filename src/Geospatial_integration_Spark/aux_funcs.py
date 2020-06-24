@@ -1,10 +1,3 @@
-import os
-from pyspark.sql import *
-from pyspark.sql.types import *
-import pyspark.sql.functions as f
-from pyspark.sql.functions import *
-
-
 #------------------------UDFs--------------------------#
 
 def read_from_tables():    #Load table into pyspark dataframes
@@ -36,18 +29,4 @@ def write_to_tables(df):        #Write cross-joined dataframe to new table
     properties = YYY 
     df.write.jdbc(url = url, table = 'db_name_3', mode = 'append', properties=properties)
     
-#----------------------------main-----------------------------#
-if __name__ == "__main__":
-    os.environ['PYSPARK_SUBMIT_ARGS'] = '--driver-class-path /tmp/jars/postgresql-42.2.13.jar --jars /tmp/jars/postgresql-42.2.13.jar pyspark-shell'
 
-    spark = SparkSession\
-            .builder\
-            .appName("Integrating two different datasets")\
-            .config('spark.driver.extraClassPath', '/usr/local/spark/jars/postgresql-42.2.13.jar')\
-            .getOrCreate()
-        
-
-    df_aqraw, df_zip = read_from_tables()
-    df_aqraw = filter_df_aqraw(df_aqraw)
-    df_integrated = crossjoin(df_aqraw, df_zip)
-    spark.stop()

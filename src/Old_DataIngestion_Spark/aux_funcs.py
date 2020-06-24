@@ -1,9 +1,6 @@
-import sys
-from pyspark.sql import *
-from pyspark.sql.functions import col, weekofyear, dayofyear
-import pyspark.sql.functions as f
-from pyspark.sql import *
-from pyspark.sql.types import *
+from configs import *
+
+#------------------------UDFs--------------------------#
 
 def read_from_json(filename):
     df = spark.read.json(filename)
@@ -25,32 +22,12 @@ def schema_transformation(df):
     
 def write_to_tables(df):
     df = df.filter(df['country'] == "US")
-    urlzip = XXXX
-    properties = YYYY
-    df1 = spark.read.jdbc(url=urlzip,table='db_name1',properties=properties)
+    df1 = spark.read.jdbc(url=USZIP_URL,table='db_name1',properties=PROPERTIES)
     df = df.join(df1, (df.latitude == df1.latitude) & (df.longitude == df1.longitude))
     df2 = df.filter(df['zip'] == 85006)
     df2 = df2.select(df2['time'], df2['week'], df2['day'], df2['zip'], df2['parameter'], df2['unit'], df2['value'])
-    url = XXXX
-    properties = YYYY
-    df2.write.jdbc(url = url, table = 'db_name2', mode = 'append', properties=properties)   
+    df2.write.jdbc(url = US_URL, table = 'db_name2', mode = 'append', properties=PROPERTIES)   
     df3 = df.select(df['time'], df['week'], df['day'], df['zip'], df['parameter'], df['unit'], df['value'])
-    df3.write.jdbc(url = url, table = 'db_name3', mode = 'append', properties=properties)
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: import_ndjson <file>", file=sys.stderr)
-        sys.exit(-1)
-
-    spark = SparkSession\
-        .builder\
-        .appName("Import ndjson")\
-        .getOrCreate()
-
-    df = read_from_json(sys.argv[1])
-    df = schema_transformation(df)
-    write_to_tables(df)
-
-    spark.stop()
+    df3.write.jdbc(url = USZIP_URL, table = 'db_name3', mode = 'append', properties=PROPERTIES)
+    
 

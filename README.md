@@ -19,22 +19,28 @@ From the point of view of data, what makes this a challenging problem is that th
 
 ```
 .
+├── Demo_video_1.gif
 ├── LICENSE
+├── Pipeline.png
 ├── README.md
 └── src
     ├── Data_examples
-    │   ├── 1592513465.ndjson
+    │   ├── aqdata.ndjson
     │   └── uszips.csv
-    ├── Demo_video_1.gif
     ├── Geospatial_integration_Spark
-    │   └── integrate_geo_data.py
+    │   ├── aux_funcs.py
+    │   ├── configs.py
+    │   └── main.py
     ├── Grafana_queries
     │   └── Queries.sql
     ├── Live_DataIngestion_SQS
-    │   └── livedata_ndjson.py
-    ├── Old_DataIngestion_Spark
-    │   └── import_ts_ndjson.py
-    └── Pipeline.png
+    │   ├── aux_funcs.py
+    │   ├── configs.py
+    │   └── main.py
+    └── Old_DataIngestion_Spark
+        ├── aux_funcs.py
+        ├── configs.py
+        └── main.py
 ```
 
 ### Data sources
@@ -47,11 +53,11 @@ For complete data:
 
 
 ### Tech Stack
-![image](src/Pipeline.png)
+![image](Pipeline.png)
 
 ### Grafana demo
 
-<img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
+<img src="Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
 ### Usage Instructions 
 
