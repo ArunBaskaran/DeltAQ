@@ -53,7 +53,9 @@ For complete data:
 
 <img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
-### Usage instructions  (Detailed instructions to follow)
+### Usage Instructions 
+
+To-Do 
 
 #### Required installations
 
