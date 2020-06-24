@@ -33,7 +33,9 @@ From the point of view of data, what makes this a challenging problem is that th
     ├── Grafana_queries
     │   └── Queries.sql
     ├── Live_DataIngestion_SQS
-    │   └── livedata_ndjson.py
+    │   ├── aux_funcs.py
+    │   ├── configs.py
+    │   └── main.py
     ├── Old_DataIngestion_Spark
     │   └── import_ts_ndjson.py
     └── Pipeline.png
