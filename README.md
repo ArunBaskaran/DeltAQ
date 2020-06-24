@@ -1,12 +1,12 @@
 # DeltAQ : A scalable data warehouse for spatio-temporal analysis of air quality data
 
 ### Table of Contents  
-1. [Introduction](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#introduction)
-2. [Directory Structure](https://github.com/ArunBaskaran/DeltAQ/blob/develop/README.md#directory-structure)
-3. [Data Sources](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#data-sources)
-4. [Tech Stack](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#tech-stack)
-5. [Grafana demo](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#grafana-demo)
-6. [Usage Instructions](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#usage-instructions)
+1. [Introduction](#introduction)
+2. [Directory Structure](#directory-structure)
+3. [Data Sources](#data-sources)
+4. [Tech Stack](#tech-stack)
+5. [Grafana demo](#grafana-demo)
+6. [Usage Instructions](#usage-instructions)
 
 ### Introduction
 
@@ -17,7 +17,25 @@ From the point of view of data, what makes this a challenging problem is that th
 
 ### Directory Structure 
 
-To-Do
+```
+.
+├── LICENSE
+├── README.md
+└── src
+    ├── Data_examples
+    │   ├── 1592513465.ndjson
+    │   └── uszips.csv
+    ├── Demo_video_1.gif
+    ├── Geospatial_integration_Spark
+    │   └── integrate_geo_data.py
+    ├── Grafana_queries
+    │   └── Queries.sql
+    ├── Live_DataIngestion_SQS
+    │   └── livedata_ndjson.py
+    ├── Old_DataIngestion_Spark
+    │   └── import_ts_ndjson.py
+    └── Pipeline.png
+```
 
 ### Data sources
 
@@ -35,7 +53,9 @@ For complete data:
 
 <img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
-### Usage instructions  (Detailed instructions to follow)
+### Usage Instructions 
+
+To-Do 
 
 #### Required installations
 
