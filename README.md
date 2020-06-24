@@ -17,7 +17,23 @@ From the point of view of data, what makes this a challenging problem is that th
 
 ### Directory Structure 
 
-To-Do
+.
+├── LICENSE
+├── README.md
+└── src
+    ├── Data_examples
+    │   ├── 1592513465.ndjson
+    │   └── uszips.csv
+    ├── Demo_video_1.gif
+    ├── Geospatial_integration_Spark
+    │   └── integrate_geo_data.py
+    ├── Grafana_queries
+    │   └── Queries.sql
+    ├── Live_DataIngestion_SQS
+    │   └── livedata_ndjson.py
+    ├── Old_DataIngestion_Spark
+    │   └── import_ts_ndjson.py
+    └── Pipeline.png
 
 ### Data sources
 
