@@ -17,6 +17,7 @@ From the point of view of data, what makes this a challenging problem is that th
 
 ### Directory Structure 
 
+```
 .
 ├── LICENSE
 ├── README.md
@@ -34,6 +35,7 @@ From the point of view of data, what makes this a challenging problem is that th
     ├── Old_DataIngestion_Spark
     │   └── import_ts_ndjson.py
     └── Pipeline.png
+```
 
 ### Data sources
 
