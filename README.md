@@ -19,13 +19,14 @@ From the point of view of data, what makes this a challenging problem is that th
 
 ```
 .
+├── Demo_video_1.gif
 ├── LICENSE
+├── Pipeline.png
 ├── README.md
 └── src
     ├── Data_examples
     │   ├── aqdata.ndjson
     │   └── uszips.csv
-    ├── Demo_video_1.gif
     ├── Geospatial_integration_Spark
     │   ├── aux_funcs.py
     │   ├── configs.py
@@ -36,11 +37,10 @@ From the point of view of data, what makes this a challenging problem is that th
     │   ├── aux_funcs.py
     │   ├── configs.py
     │   └── main.py
-    ├── Old_DataIngestion_Spark
-    │   ├── aux_funcs.py
-    │   ├── configs.py
-    │   └── main.py
-    └── Pipeline.png
+    └── Old_DataIngestion_Spark
+        ├── aux_funcs.py
+        ├── configs.py
+        └── main.py
 ```
 
 ### Data sources
@@ -53,11 +53,11 @@ For complete data:
 
 
 ### Tech Stack
-![image](src/Pipeline.png)
+![image](Pipeline.png)
 
 ### Grafana demo
 
-<img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
+<img src="Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
 
 ### Usage Instructions 
 
