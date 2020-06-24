@@ -23,11 +23,13 @@ From the point of view of data, what makes this a challenging problem is that th
 ├── README.md
 └── src
     ├── Data_examples
-    │   ├── 1592513465.ndjson
+    │   ├── aqdata.ndjson
     │   └── uszips.csv
     ├── Demo_video_1.gif
     ├── Geospatial_integration_Spark
-    │   └── integrate_geo_data.py
+    │   ├── aux_funcs.py
+    │   ├── configs.py
+    │   └── main.py
     ├── Grafana_queries
     │   └── Queries.sql
     ├── Live_DataIngestion_SQS
