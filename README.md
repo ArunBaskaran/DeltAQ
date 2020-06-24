@@ -2,10 +2,11 @@
 
 ### Table of Contents  
 1. [Introduction](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#introduction)
-2. [Data Sources](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#data-sources)
-3. [Tech Stack](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#tech-stack)
-4. [Grafana demo](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#grafana-demo)
-4. [Usage Instructions](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#usage-instructions)
+2. [Directory Structure](https://github.com/ArunBaskaran/DeltAQ/blob/develop/README.md#directory-structure)
+3. [Data Sources](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#data-sources)
+4. [Tech Stack](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#tech-stack)
+5. [Grafana demo](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#grafana-demo)
+6. [Usage Instructions](https://github.com/ArunBaskaran/DeltAQ/tree/develop/aws-implementation#usage-instructions)
 
 ### Introduction
 
@@ -13,6 +14,10 @@ Air quality is an important metric that influences health indicators such as lif
 
 From the point of view of data, what makes this a challenging problem is that the raw data does not exist in a queryable form. It has a nested and a convoluted schema, and columns that are not required for an OLAP warehouse. In addition, the geolocation data is not intuitive from a user perspective (for example, indexed by zip codes). Towards addressing these issues, I have built an ETL pipeline that ingests historical and live air quality data, indexes the data according to zip-code, and loads the data into a TimescaleDB that can be queried from using Grafana 
 
+
+### Directory Structure 
+
+To-Do
 
 ### Data sources
 
@@ -29,10 +34,6 @@ For complete data:
 ### Grafana demo
 
 <img src="src/Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
-
-### Directory Structure 
-
-To-Do
 
 ### Usage instructions  (Detailed instructions to follow)
 
