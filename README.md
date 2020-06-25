@@ -24,6 +24,11 @@ From the point of view of data, what makes this a challenging problem is that th
 ├── Pipeline.png
 ├── README.md
 └── src
+    ├── Database_setup
+    │   ├── Postgres_tables
+    │   │   └── Queries.sql
+    │   └── Timescale_tables
+    │       └── Queries.sql
     ├── Data_examples
     │   ├── aqdata.ndjson
     │   └── uszips.csv
