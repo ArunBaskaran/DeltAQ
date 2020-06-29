@@ -62,7 +62,7 @@ For complete data:
 
 ### Grafana demo
 
-<img src="Demo_video_1.gif" alt="drawing" width="1000" height="500"/>
+<img src="demo_2.gif" alt="drawing" width="1000" height="500"/>
 
 ### Usage Instructions 
 
