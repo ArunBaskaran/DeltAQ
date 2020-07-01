@@ -77,5 +77,14 @@ To-Do
 * Grafana 
 
 
-#### Config options (To-do)
+#### Config options 
+
+| Configuration                               | Value     |
+|---------------------------------------------|-----------|
+| spark.sql.execution.arrow.enabled           | true      |
+| spark.sql.inMemoryColumnarStorage.batchSize | 200000    |
+| spark.sql.files.maxPartitionBytes           | 536870912 |
+| spark.driver.memory                         | 10g       |
+| effective_io_concurrency                    | 200       |
+| max_worker_processes                        | 13        |
 
