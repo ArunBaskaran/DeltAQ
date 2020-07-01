@@ -66,8 +66,6 @@ For complete data:
 
 ### Usage Instructions 
 
-To-Do 
-
 #### Required installations
 
 * Spark v2.4.5: AWS EC2 four m5 nodes (1 master and 3 workers) 
