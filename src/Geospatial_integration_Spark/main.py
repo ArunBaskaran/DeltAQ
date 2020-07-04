@@ -12,10 +12,12 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.appName(SESSION_NAME).config('spark.driver.extraClassPath', DRIVER_PATH).getOrCreate()
 
-    df_aqraw, df_zip = read_from_tables()
+    df_aqraw, df_zip = read_from_tables()  #convert table to dataframe
     
-    df_aqraw = filter_df_aqraw(df_aqraw)
+    df_aqraw = filter_df_aqraw(df_aqraw)       #filter the rows needed to perform geospatial integration
     
-    df_integrated = crossjoin(df_aqraw, df_zip)
+    df_integrated = crossjoin(df_aqraw, df_zip)   #Perform crossjoin
+    
+    write_to_tables(df_integrated)   #Write integrated dataframe to database table
     
     spark.stop()

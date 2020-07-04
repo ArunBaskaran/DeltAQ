@@ -15,9 +15,9 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.appName(SESSION_NAME).config('spark.driver.extraClassPath', DRIVER_PATH).getOrCreate()
 
-    df = read_from_json(sys.argv[1])
-    df = schema_transformation(df)
-    write_to_tables(df)
+    df = read_from_json(sys.argv[1])  #convert json to dataframe
+    df = schema_transformation(df) #Transform schema from old to new
+    write_to_tables(df) #Write transformed dataframe to database
 
     spark.stop()
 

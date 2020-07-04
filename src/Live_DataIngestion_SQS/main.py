@@ -22,10 +22,10 @@ if __name__ == "__main__":
         response = sqs.receive_message(QueueUrl = QUEUE_URL)
         if(len(response)<2):  #len(response) = 2 when an unread message is on the queue
             break
-        name = download_from_s3(response)
-        df = read_from_json(name)
-        df = schema_transformation(df)
-        write_to_tables(df)
+        name = download_from_s3(response)   #get the name of new file that has been uploaded to s3
+        df = read_from_json(name)   #convert json to dataframe
+        df = schema_transformation(df)    #Transform schema from old to new
+        write_to_tables(df)         #Write transformed dataframe to database
         receipt_handle = response['Messages'][0]['ReceiptHandle']
         sqs.delete_message(QueueUrl=QUEUE_URL, ReceiptHandle=receipt_handle) #Delete message after file data has been loaded onto table
         if os.path.exists(name):
