@@ -6,7 +6,11 @@ def read_from_json(filename):
     df = spark.read.json(filename)
     return df 
     
-def schema_transformation(df):
+def schema_transformation(df):  #Transform raw data from a nested structure to a linear structure
+    #------Data Cleaning-----#
+    df = df.na.drop(how='all')  
+    df = df.fillna({'value':0.0})
+    #------Schema Transformation----#
     df = df.drop('attribution')
     df = df.withColumn("time", col('date.local').cast(TimestampType()))
     df = df.drop('date')
@@ -20,7 +24,7 @@ def schema_transformation(df):
     df = df.withColumn("day", (dayofyear(col('time').cast(DateType())).cast(IntegerType())))
     return df
     
-def write_to_tables(df):
+def write_to_tables(df):    #Write schema-transformed dataframe to Timescale table
     df = df.filter(df['country'] == "US")
     df1 = spark.read.jdbc(url=USZIP_URL,table='db_name1',properties=PROPERTIES)
     df = df.join(df1, (df.latitude == df1.latitude) & (df.longitude == df1.longitude))

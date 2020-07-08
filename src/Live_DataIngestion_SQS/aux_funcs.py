@@ -16,6 +16,10 @@ def read_from_json(filename):      #Load json files into pyspark dataframes
     return df 
     
 def schema_transformation(df):      #Transform raw data from a nested structure to a linear structure
+    #------Data Cleaning-----#
+    df = df.na.drop(how='all')  
+    df = df.fillna({'value':0.0})
+    #------Schema Transformation----#
     df = df.drop('attribution')
     df = df.withColumn("time", col('date.local').cast(TimestampType()))
     df = df.drop('date')
