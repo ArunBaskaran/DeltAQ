@@ -15,7 +15,17 @@ def read_from_json(filename):      #Load json files into pyspark dataframes
     df = spark.read.json(filename)
     return df 
     
+def schemavalidation(df): #Schema Validation
+    try:
+        quinn.validate_schema(df, requiredSchema)
+    except:
+        return False
+    return True
+
 def schema_transformation(df):      #Transform raw data from a nested structure to a linear structure
+    #Schema Validation
+    if(schemavalidation(df)==False):
+        return None
     #------Data Cleaning-----#
     df = df.na.drop(how='all')  
     df = df.fillna({'value':0.0})

@@ -17,6 +17,8 @@ if __name__ == "__main__":
 
     df = read_from_json(sys.argv[1])  #convert json to dataframe
     df = schema_transformation(df) #Transform schema from old to new
+    if(df == None):
+            continue
     write_to_tables(df) #Write transformed dataframe to database
 
     spark.stop()

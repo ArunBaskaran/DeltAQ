@@ -5,8 +5,19 @@ from configs import *
 def read_from_json(filename):
     df = spark.read.json(filename)
     return df 
+
+def schemavalidation(df, requiredSchema): #Schema Validation
+    try:
+        quinn.validate_schema(df, requiredSchema)
+    except:
+        return False
+    return True
     
 def schema_transformation(df):  #Transform raw data from a nested structure to a linear structure
+    #Schema Validation
+    #requiredSchema = StructType([StructField("example", IntegerType(), True]))
+    #if(schemavalidation(df, requiredSchema)==False):
+    #    return None
     #------Data Cleaning-----#
     df = df.na.drop(how='all')  
     df = df.fillna({'value':0.0})

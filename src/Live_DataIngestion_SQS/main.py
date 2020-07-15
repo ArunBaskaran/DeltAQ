@@ -25,6 +25,8 @@ if __name__ == "__main__":
         name = download_from_s3(response)   #get the name of new file that has been uploaded to s3
         df = read_from_json(name)   #convert json to dataframe
         df = schema_transformation(df)    #Transform schema from old to new
+        if(df == None):
+            continue
         write_to_tables(df)         #Write transformed dataframe to database
         receipt_handle = response['Messages'][0]['ReceiptHandle']
         sqs.delete_message(QueueUrl=QUEUE_URL, ReceiptHandle=receipt_handle) #Delete message after file data has been loaded onto table
