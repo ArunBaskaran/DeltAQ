@@ -62,7 +62,7 @@ For complete data:
 
 ### Demo: Impact of Covid-lockdowns on Pollution
 
-<img src="demo_3.gif" alt="drawing" width="1000" height="500"/>
+<img src="Demo3.gif" alt="drawing" width="1000" height="500"/>
 
 My product can be used to visualize how the covid-related lockdowns impacted air pollution. The straightforward and expected result is that there is indeed a reduction in pollution levels, but the trends can tell us some interesting stories. I first look at the zip-code 94107 which is San Francisco. California was one of the earliest to lockdown, and we see an almost homogeneous drop around March 15th. On the other hand, zipcode 85006, which is in Phoenix, did not lockdown until the first week of April. Going back to California, the trends in Los Angeles also show a decline around March 15th, but we continue seeing sharp spikes around 8AM during weekdays. If I had more time, I would explore these trends in the context of social behavior during these unprecedent times. 
 
