@@ -6,7 +6,25 @@ def read_from_json(filename):
     df = spark.read.json(filename)
     return df 
 
-def schemavalidation(df, requiredSchema): #Schema Validation
+def schemavalidation(df): #Schema Validation
+    requiredSchema = StructType([StructField("attribution", 
+                                        ArrayType(StructType([StructField("element", 
+                                                        StructType([StructField("name", StringType(), True), StructField("url", StringType(), True)]), True]))), True), 
+                     StructField("averagingPeriod", 
+                                        StructType([StructField("unit", StringType(), True), StructField("value", LongType(), True)]), True) , 
+                     StructField("city", StringType(), True), 
+                     StructField("coordinates", 
+                                        StructType([StructField("latitude", DoubleType(), True), StructField("longitude", DoubleType(), True)]), True), 
+                     StructField("country", StringType(), True), 
+                     StructField("date", 
+                                        StructType([StructField("local", StringType(), True), StructField("utc", StringType(), True)]), True), 
+                     StructField("location", StringType(), True), 
+                     StructField("mobile", BooleanType(), True), 
+                     StructField("parameter", StringType(), True), 
+                     StructField("sourceName", StringType(), True), 
+                     StructField("sourceType", StringType(), True), 
+                     StructField("unit", StringType(), True), 
+                     StructField("value", DoubleType(), True)])
     try:
         quinn.validate_schema(df, requiredSchema)
     except:
@@ -15,9 +33,8 @@ def schemavalidation(df, requiredSchema): #Schema Validation
     
 def schema_transformation(df):  #Transform raw data from a nested structure to a linear structure
     #Schema Validation
-    #requiredSchema = StructType([StructField("example", IntegerType(), True]))
-    #if(schemavalidation(df, requiredSchema)==False):
-    #    return None
+    if(schemavalidation(df)==False):
+        return None
     #------Data Cleaning-----#
     df = df.na.drop(how='all')  
     df = df.fillna({'value':0.0})

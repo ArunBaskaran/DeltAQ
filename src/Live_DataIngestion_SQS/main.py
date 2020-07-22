@@ -9,6 +9,7 @@ from configs import *
 from aux_funcs import *
 
 
+
 if __name__ == "__main__":
     s3 = boto3.client('s3', region_name='us-east-1')
     sqs = boto3.client('sqs', region_name='us-east-1')

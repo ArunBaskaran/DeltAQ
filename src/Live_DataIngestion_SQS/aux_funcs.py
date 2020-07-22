@@ -1,4 +1,5 @@
 from configs import *
+from quinn.extensions import *
 
 #------------------------UDFs--------------------------#
 
@@ -16,6 +17,24 @@ def read_from_json(filename):      #Load json files into pyspark dataframes
     return df 
     
 def schemavalidation(df): #Schema Validation
+    requiredSchema = StructType([StructField("attribution", 
+                                        ArrayType(StructType([StructField("element", 
+                                                        StructType([StructField("name", StringType(), True), StructField("url", StringType(), True)]), True]))), True), 
+                     StructField("averagingPeriod", 
+                                        StructType([StructField("unit", StringType(), True), StructField("value", LongType(), True)]), True) , 
+                     StructField("city", StringType(), True), 
+                     StructField("coordinates", 
+                                        StructType([StructField("latitude", DoubleType(), True), StructField("longitude", DoubleType(), True)]), True), 
+                     StructField("country", StringType(), True), 
+                     StructField("date", 
+                                        StructType([StructField("local", StringType(), True), StructField("utc", StringType(), True)]), True), 
+                     StructField("location", StringType(), True), 
+                     StructField("mobile", BooleanType(), True), 
+                     StructField("parameter", StringType(), True), 
+                     StructField("sourceName", StringType(), True), 
+                     StructField("sourceType", StringType(), True), 
+                     StructField("unit", StringType(), True), 
+                     StructField("value", DoubleType(), True)])
     try:
         quinn.validate_schema(df, requiredSchema)
     except:
