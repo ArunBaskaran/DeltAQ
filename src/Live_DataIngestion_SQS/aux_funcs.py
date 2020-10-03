@@ -1,7 +1,7 @@
 from configs import *
 from quinn.extensions import *
 
-#------------------------UDFs--------------------------#
+#------------------------Native Python function--------------------------#
 
 def download_from_s3(response):     #Download file from s3 onto local ec2 instance
     data = json.loads(response['Messages'][0]['Body'])

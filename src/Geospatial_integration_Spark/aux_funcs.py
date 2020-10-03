@@ -1,4 +1,4 @@
-#------------------------UDFs--------------------------#
+#------------------------Native Python function--------------------------#
 
 def read_from_tables():    #Load table into pyspark dataframes
     url = XXX

@@ -1,6 +1,6 @@
 from configs import *
 
-#------------------------UDFs--------------------------#
+#------------------------Native Python function--------------------------#
 
 def read_from_json(filename):
     df = spark.read.json(filename)
