@@ -40,15 +40,20 @@ def schema_transformation(df):  #Transform raw data from a nested structure to a
     df = df.fillna({'value':0.0})
     #------Schema Transformation----#
     df = df.drop('attribution')
+    # optimize using pandas udf
     df = df.withColumn("time", col('date.local').cast(TimestampType()))
     df = df.drop('date')
+    # optimize using pandas udf
     df = df.withColumn("latitude", col('coordinates.latitude'))
+    # optimize using pandas udf
     df = df.withColumn("longitude", col('coordinates.longitude'))
     df = df.drop('coordinates')
     df = df.withColumn("ap_units", col('averagingPeriod.unit'))
     df = df.withColumn("ap_value", col('averagingPeriod.value'))
     df = df.drop('averagingPeriod')
+    # optimize using pandas udf
     df = df.withColumn("week", (weekofyear(col('time').cast(DateType())).cast(IntegerType())))
+    # optimize using pandas udf
     df = df.withColumn("day", (dayofyear(col('time').cast(DateType())).cast(IntegerType())))
     return df
     
