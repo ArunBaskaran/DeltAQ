@@ -67,10 +67,20 @@ def schema_transformation(df):  #Transform raw data from a nested structure to a
     df = df.withColumn("day", (dayofyear(col('time').cast(DateType())).cast(IntegerType())))
     return df
     
+@pandas_udf('boolean', PandasUDFType.SCALAR)
+def filter_country(country):
+    return country == "US"
+
+@pandas_udf('boolean', PandasUDFType.SCALAR)
+def filter_zip(zipcode):
+    return zipcode == 85006
+
 def write_to_tables(df):    #Write schema-transformed dataframe to Timescale table
+    #df = df.filter(filter_country(df['country']))  # Alternate implementation using pandas udf
     df = df.filter(df['country'] == "US")
     df1 = spark.read.jdbc(url=USZIP_URL,table='db_name1',properties=PROPERTIES)
     df = df.join(df1, (df.latitude == df1.latitude) & (df.longitude == df1.longitude))
+    #df = df.filter(filter_zip(df['zip']))  # Alternate implementation using pandas udf
     df2 = df.filter(df['zip'] == 85006)
     df2 = df2.select(df2['time'], df2['week'], df2['day'], df2['zip'], df2['parameter'], df2['unit'], df2['value'])
     df2.write.jdbc(url = US_URL, table = 'db_name2', mode = 'append', properties=PROPERTIES)   
