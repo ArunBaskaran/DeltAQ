@@ -15,11 +15,11 @@ def filter_df_aqraw(df):     #Clean dataframes - Drop irrelevant columns, filter
     df = df.dropDuplicates(['latitude', 'longitude'])
     return df
     
-@pandas_udf(Series, DoubleType())
+@pandas_udf('int', PandasUDFType.SCALAR)
 def get_rank(v):
     return v.rank()
     
-@pandas_udf(Series, DoubleType())
+@pandas_udf('double', PandasUDFType.SCALAR)
 def get_diff(v1, v2, v3, v4):
     latdiff =  v1.add(-v3).abs()
     longdiff =  v2.add(-v4).abs()
